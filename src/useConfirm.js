@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import ReactDom from "react-dom";
 
 const useConfirm = (message = "", onConfirm, onCancel) => {
-  if (onConfirm && typeof onConfirm !== "function") {
+  if (!onConfirm || typeof onConfirm !== "function") {
     return;
   }
   if (onCancel && typeof onCancel !== "function") {
